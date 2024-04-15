@@ -1,9 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
 <style>
+    body{
+        font-size: 3vw;
+    }
     #login {
         max-width: 25rem;
         display: none;
     }
-
+#reg form{
+    display:none;
+}
+#reg:hover form{
+    display: block;
+}
     #register label,
     #login label {
         display: flex;
@@ -47,27 +62,71 @@
     nav{
         width: 50%;
         display: flex;
-        justify-content: space-evenly;   
+        justify-content: space-evenly;  
+    }
+    /* #logo{ 
+        background-image: url(logo.png);
+        background-repeat: no-repeat;
+        width: 4rem;
+        height: 2rem;
+        background-size: cover;
+    } */
+    #logo{ 
+        width: 3rem;
+        height: auto;
+        object-fit: scale-down;
     }
     header{
         top:0;
+        display: flex;
+        /* justify-content: ; */
     }
     footer{
         bottom:0;
     }
 </style>
-
+</head>
 <body>
+    
+
     <header>
-        <img src="/">
+        <!-- <div id="logo"></div> -->
+        <img src="logo.png" id="logo" alt="logo">
         <nav>
             <a>HOME</a>
             <a>SHOP</a>
             <a>CART</a>
+            <div id="reg">
+                REGISTER
+                <form class="login centered highlighted" action="index.html" method="post" id="register" >
+                    <fieldset>
+                        <legend>
+                            Register
+                        </legend>
+                        <label>
+                            User Name:
+                            <input name="username" class="username" id="username" type="text" placeholder="User Name">
+                        </label>
+                        <label>
+                            E-Mail:
+                            <input name="email" class="email" id="email" type="email" placeholder="E-Mail">
+                        </label>
+                        <label>
+                            Password:
+                            <input name="password" class="password" id="password" type="password" placeholder="Password">
+                        </label>
+                        <label>
+                            Confirm Password:
+                            <input name="password2" class="password2" id="password2" type="password" placeholder="Confirm Password">
+                        </label>
+                        <input type="submit" value="Register">
+                    </fieldset>
+                </form>
+            </div>
         </nav>
     </header>
     <div class="dialogs">
-    <form class="centered highlighted" action="index.html" method="post" id="login" class="login">
+    <form class="login centered highlighted" action="index.html" method="post" id="login">
         <fieldset>
             <legend>
                 Login
@@ -84,30 +143,9 @@
             <input type="submit" value="Login">
         </fieldset>
     </form>
-    <form class="centered highlighted" action="index.html" method="post" id="register" class="login">
-        <fieldset>
-            <legend>
-                Register
-            </legend>
-            <label>
-                User Name:
-                <input name="username" class="username" id="username" type="text" placeholder="User Name">
-            </label>
-            <label>
-                E-Mail:
-                <input name="email" class="email" id="email" type="email" placeholder="E-Mail">
-            </label>
-            <label>
-                Password:
-                <input name="password" class="password" id="password" type="password" placeholder="Password">
-            </label>
-            <label>
-                Confirm Password:
-                <input name="password2" class="password2" id="password2" type="password" placeholder="Confirm Password">
-            </label>
-            <input type="submit" value="Register">
-        </fieldset>
-    </form>
+    
 </div>
 <footer>&copy;2024</footer>
 </body>
+
+</html>
